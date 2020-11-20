@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 	<head>
 		<meta charset="utf-8">
@@ -26,37 +26,95 @@
 
 		<main class="container">
 
-			<section class="tagging">
-				<h2>Tagging</h2>
+			<div class="row">
+				<section class="col-sm-3" id="colm1">
+					<h2>Tagging</h2>
+					<form id="tag-form" action="/tagging" method="post" class="form-horizontal">
 
-				<!-- ############### Aufgabe1a Form1 Start -->
-				<form id="tag-form" action="/tagging" method="post"></form>
-				<!-- ############### Aufgabe1a Form1 Ende -->
+							<legend><b>Enter new GeoTag</b></legend>
+							<div class="form-group">
+							<label for="Longitude"><b>Longitude</b></label>
+ 							<input type="text" id="Longitude" name="Longitude"
+								   placeholder="Longitude float value" required
+								   class="form-control">
+							</div>
+							<div class="form-group">
+							<label for="Latitude"><b>Latitude</b></label>
+							<input type="Latitude" id="Latitude" name="Latitude"
+								   placeholder="Latitude float value" required
+								   class="form-control">
+							</div>
+							<div class="form-group">
+							<label for="Name"><b>Name</b></label>
+							<input type="text" id="Name" name="Name:"
+								   placeholder="Name (max.10 letters)"
+								   pattern="[A-Za-z]" maxlength="10" required
+								   class="form-control">
+							</div>
+							<div class="form-group">
+							<label for="Hashtag"><b>Hashtag</b></label>
+							<input type="Hashtag" id="Hashtag" name="Hashtag"
+								   placeholder="#+max. 10 letters"
+								   pattern="#[A-Za-z]{1,10}"
+								   class="form-control">
+							</div>
+							<div class="form-group">
+							<input type="submit" value="Submit" class="btn btn-default"
+							 >
+							</div>
 
-			</section>
+					</form>
 
-			<section class="discovery">
-				<h2>Discovery</h2>
 
-				<!-- ############### Aufgabe1a Form2 Start -->
-				<form id="filter-form" action="/discovery" method="post">Filter
-				</form>
-				<!-- ############### Aufgabe1a Form2 Ende -->
+				</section>
 
-				<div class="taglist">
-					<ul id="results">
-						<li>Castle (49.01379, 8.404435) #sight</li>
-						<li>IWI (49.01379, 8.390071) #edu</li>
-					</ul>
-				</div>
+				<section class="col-sm-8" id="colm2">
+					<div class="row">
+						<div class="col-sm-6">
+					<h2>Discovery</h2>
+					<form id="filter-form" action="/discovery" method="post" class="form-inline">
 
-				<div class="tagmap">
-					<img id="result-img" src="./images/mapview.jpg" alt="a map with locations"/>
-					<div class="caption">Result map</div>
-				</div>
+							<legend><b>Filter by Searchterm</b></legend>
+                            <div class="form-group">
+							<input type="text" id="Searchterm" name="Searchterm"
+								   placeholder="Search term" required
+							       class="form-control">
+							</div>
+							<div class="form-group">
+							<input type="hidden" id="long" name ="Longitude" value=""
+							 class="form-control">
+							</div>
+							<div class="form-group">
+							<input type="hidden" id="lat" name="Latitude" value=""
+							 class="form-control">
+							</div>
+							<div class="form-group">
+							<input type="submit" value="Apply"
+							 class="btn btn-default" id="button">
+							</div>
 
-			</section>
 
+					</form>
+					</div>
+					</div>
+					<div class="row" id="rw3">
+						<div class="col-sm-5">
+							<ul id="results">
+								<li>Castle (49.01379, 8.404435) #sight</li>
+								<li>IWI (49.01379, 8.390071) #edu</li>
+							</ul>
+						</div>
+
+						<div class="col-sm-6">
+							<img id="result-img" src="./images/mapview.jpg" alt="a map with locations"/>
+							<div class="caption">Result map</div>
+						</div>
+					</div>
+
+
+
+				</section>
+			</div>
 		</main>
 
 		<footer>

@@ -3,6 +3,53 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.jumbotron {
+  background-color: chartreuse;
+  color: white;
+}
+
+ul {
+  margin: 1px;
+  padding: 0px;
+}
+
+ul li{
+  margin: 5px;
+  padding: 5px;
+  list-style-type: none;
+  color: white;
+  background-color: #00B7FF;
+}
+
+#filter-form {
+  margin-top: 10px;
+}
+
+#Searchterm {
+  margin-top: 25px;
+}
+
+#button {
+  margin-top: 25px;
+  margin-left: 0px;
+}
+
+#colm2 {
+  margin-left: 10px;
+}
+
+#rw3 {
+  margin-top: 8px;
+}
+
+footer {
+  background-color: chartreuse;
+}
+
 a {
   color: #00B7FF;
+}
+
+* {
+  box-sizing: border-box;
 }

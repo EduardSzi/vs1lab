@@ -2,15 +2,19 @@
 <html lang="en">
 
 	<head>
+
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>GeoTagApp</title>
-		<link rel='stylesheet' href='./stylesheets/style.css'/>
+		<link rel='stylesheet' media="screen and (min-width: 13.5cm)"
+			  href='./stylesheets/style.css'/>
+		<link rel="stylesheet" media="screen and (max-width: 13.4cm)"
+			  href='./stylesheets/smallDevices.css'/>
 	</head>
 
 	<body>
 
-		<header>
+		<header class="header">
 			<img src="./images/location.png" width="100"
 					alt="an image of a map and location">
 			<h1>GeoTagApp</h1>
@@ -20,42 +24,74 @@
 			</nav>
 		</header>
 
-		<main>
+		<main class="container">
 
 			<section class="tagging">
 				<h2>Tagging</h2>
 
-				<!-- ############### Aufgabe1a Form1 Start -->
-				<form id="tag-form" action="/tagging" method="post"></form>
-				<!-- ############### Aufgabe1a Form1 Ende -->
+				<form id="tag-form" action="/taggingps" method="post" >
+					<fieldset>
+						<legend><b>Enter new GeoTag</b></legend>
+						<label for="Longitude"><b>Longitude</b></label>
+						<input type="text" id="Longitude" name="Longitude"
+							   placeholder="Longitude float value" required
+						       class="tag-form">
+						<label for="Latitude"><b>Latitude</b></label>
+						<input type="Latitude" id="Latitude" name="Latitude"
+							   placeholder="Latitude float value" required
+							   class="tag-form"
+							   >
+						<label for="Name"><b>Name</b></label>
+						<input type="text" id="Name" name="Name:"
+							   placeholder="Name (max.10 letters)"
+							   pattern="[A-Za-z]" maxlength="10" required
+							   class="tag-form">
+						<label for="Hashtag"><b>Hashtag</b></label>
+						<input type="Hashtag" id="Hashtag" name="Hashtag"
+							   placeholder="#+max. 10 letters"
+							   pattern="#[A-Za-z]{1,10}"
+							   class="tag-form">
+						<input type="submit" value="Submit" class="tag-list">
+					</fieldset>
+				</form>
 
 			</section>
 
 			<section class="discovery">
 				<h2>Discovery</h2>
 
-				<!-- ############### Aufgabe1a Form2 Start -->
-				<form id="filter-form" action="/discovery" method="post"></form>
-				<!-- ############### Aufgabe1a Form2 Ende -->
+				<form id="filter-form" action="/discovery" method="post">
+					<fieldset>
+						<legend><b>Filter by Searchterm</b></legend>
 
-				<div class="taglist">
-					<ul id="results">
-						<li>Castle (49.01379, 8.404435) #sight</li>
-						<li>IWI (49.01379, 8.390071) #edu</li>
-					</ul>
-				</div>
+						<input type="text" id="Searchterm" name="Searchterm"
+							   placeholder="Search term" required>
+						<input type="hidden" id="long" name ="Longitude" value="">
+						<input type="hidden" id="lat" name="Latitude" value="">
+						<input type="submit" value="Apply">
 
-				<div class="tagmap">
-					<img id="result-img" src="./images/mapview.jpg" alt="a map with locations"/>
-					<div class="caption">Result map</div>
+					</fieldset>
+				</form>
+                <div class="discovery-content">
+					<div class="taglist">
+						<ul id="results">
+							<li>Castle (49.01379, 8.404435) #sight</li>
+							<li>IWI (49.01379, 8.390071) #edu</li>
+						</ul>
+					</div>
+
+					<div class="tagmap">
+						<img id="result-img" src="./images/mapview.jpg" alt="a map with locations"/>
+						<div class="caption">Result map</div>
+					</div>
 				</div>
 
 			</section>
 
 		</main>
 
-		<footer>
-			<span>2017 by LKIT</span>
+		<footer class="footer" >
+			<span>2020 by LKIT</span>
 		</footer>
 
 	</body>

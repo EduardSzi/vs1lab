@@ -3,6 +3,98 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+header {
+  background-color: #761c19;
+  color: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+
+.tagging {
+<!-- Use real pixel width and length settings of element -->
+  flex-basis: auto;
+}
+
+.discovery{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 25px;
+}
+
+.filter-form {
+  flex-basis: max-content;
+}
+
+.discovery-content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.taglist{
+  flex-basis: auto;
+}
+
+.tagmap {
+  flex-basis: auto;
+  margin-top: 10px;
+}
+
+.fieldset {
+  background-color: white;
+}
+
+legend {
+  background-color: white;
+  color: black;
+  padding: 5px 10px;
+}
+
+input {
+  margin: 0px;
+}
+
+ul {
+  margin: 5px;
+  margin-top: 10px;
+  margin-right: 15px;
+  padding: 0px;
+}
+
+ul li{
+  margin: 5px;
+  padding: 4px;
+  list-style-type: none;
+  color: white;
+  background-color: #e9322d;
+}
+
+input.tag-form {
+  display:block ;
+}
+
+input:hover[type="submit"]
+{
+  background: grey;
+}
+
+footer {
+  background-color: #761c19;
+  color: white;
+  padding: 8px;
+}
+
 a {
   color: #00B7FF;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+
